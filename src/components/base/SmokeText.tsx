@@ -1,5 +1,6 @@
 import * as React from "react";
 
 export default ({children}) => {
-	return children;
+    console.log(children);
+    return children;
 };

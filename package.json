@@ -2,7 +2,7 @@
   "name": "trainee-test-1",
   "version": "1.1.1",
   "engines": {
-    "node": ">=10.4.0"
+    "node": ">=10.4.0 <17.0.0"
   },
   "scripts": {
     "start": "start-storybook"
@@ -19,6 +19,7 @@
     "@types/storybook__react": "4.0.2",
     "awesome-typescript-loader": "5.2.1",
     "core-js": "3.1.4",
+    "node": "^16.0.0",
     "typescript": "3.5.3",
     "webpack": "4.35.3"
   }

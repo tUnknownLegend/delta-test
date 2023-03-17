@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {updateStyle} from '../../utils/slotSheet';
+import {updateStyle} from '@/utils/slotSheet';
 
 import sheet from './styles';
 
