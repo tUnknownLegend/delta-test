@@ -5,7 +5,9 @@
     "node": ">=10.4.0 <17.0.0"
   },
   "scripts": {
-    "start": "start-storybook"
+    "start": "start-storybook",
+    "lint": "npx eslint . --ext .ts",
+    "lint:fix": "npx eslint . --ext .ts --fix"
   },
   "dependencies": {
     "react": "16.8.6",
@@ -21,6 +23,12 @@
     "core-js": "3.1.4",
     "node": "^16.0.0",
     "typescript": "3.5.3",
-    "webpack": "4.35.3"
+    "webpack": "4.35.3",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.29.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-jsdoc": "^39.6.4",
+    "eslint-plugin-tsdoc": "^0.2.17"
   }
 }

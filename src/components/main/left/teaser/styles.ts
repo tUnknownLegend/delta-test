@@ -1,4 +1,4 @@
-export default locator => {
+export default (locator) => {
     return {
         '.mimic_left .teaser': {
             'cursor': 'pointer',
@@ -31,22 +31,19 @@ export default locator => {
                     locator.calcString(12, 'px'),
                 'margin-bottom':
                     locator.calcString(6, 'px'),
-            }
-        ,
+            },
 
         '.mimic_left .teaser_image .content':
             {
                 'margin-left':
                     locator.calcString(96, 'px'),
-            }
-        ,
+            },
 
         '.mimic_left .teaser_image .contacts__item_link':
             {
                 'padding-right':
                     locator.calcString(10, 'px'),
-            }
-        ,
+            },
 
         '.mimic_left .teaser .warning':
             {
@@ -64,8 +61,7 @@ export default locator => {
                     locator.calcString(6, 'px'),
                 'border':
                     '1px solid #dddcda',
-            }
-        ,
+            },
 
         '.mimic_left .teaser .contacts':
             {
@@ -73,27 +69,24 @@ export default locator => {
                     'both',
                 'font-size':
                     locator.calcString(11, 'px'),
-            }
-        ,
+            },
 
         '.mimic_left .teaser:hover .picture img':
             {
                 'transform':
                     'scale(1.02)',
-            }
-        ,
+            },
 
         '.mimic_left .teaser:hover .title':
             {
                 'text-decoration':
                     'underline',
-            }
-        ,
+            },
 
         '.mimic_left .teaser:hover .contacts__item_link':
             {
                 'text-decoration':
                     'underline',
-            }
+            },
     };
 };
