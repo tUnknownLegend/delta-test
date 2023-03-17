@@ -11,32 +11,31 @@ import Teaser from './teaser/index';
 let style = null;
 
 export default class extends React.Component<any> {
+    componentWillMount() {
+        const {
+            locator,
+        } = this.props;
 
-	componentWillMount() {
-		const {
-			locator,
-		} = this.props;
+        style = updateStyle(style, locator, sheet(locator));
+    }
 
-		style = updateStyle(style, locator, sheet(locator));
-	}
+    render() {
+        const {
+            items,
+            transform,
+        } = this.props;
 
-	render() {
-		const {
-			items,
-			transform,
-		} = this.props;
-
-		return (
-			<Block className={transform('wrapper wrapper_frame')}>
-				{items.map((item, index) => (
-					<Teaser
-						item={item}
-						index={index}
-						transform={transform}
-						key={index}
-					/>
-				))}
-			</Block>
-		);
-	}
+        return (
+            <Block className={transform('wrapper wrapper_frame')}>
+                {items.map((item, index) => (
+                    <Teaser
+                        item={item}
+                        index={index}
+                        transform={transform}
+                        key={index}
+                    />
+                ))}
+            </Block>
+        );
+    }
 }
