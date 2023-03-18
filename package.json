@@ -8,7 +8,7 @@
     "start": "start-storybook",
     "lint": "npx eslint . --ext .ts",
     "lint:fix": "npx eslint . --ext .ts --fix",
-    "test": "mocha -r ts-node/register 'src/components/base/*'"
+    "test": "mocha --require global-jsdom/register -r ts-node/register 'src/components/base/*'"
   },
   "dependencies": {
     "react": "16.8.6",
@@ -30,6 +30,7 @@
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-jsdoc": "^39.6.4",
     "eslint-plugin-tsdoc": "^0.2.17",
+    "global-jsdom": "^8.7.0",
     "mocha": "^10.2.0",
     "node": "^16.13.0",
     "ts-mocha": "^10.0.0",
