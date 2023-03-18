@@ -1,43 +1,42 @@
 // import * as React from 'react';
-// import {render, fireEvent} from '@testing-library/react';
-// import '@testing-library/jest-dom';
 // import SmokeText from './SmokeText';
+// import * as assert from 'assert';
+// import {render} from '@testing-library/react';
 //
-// afterEach(jest.clearAllMocks);
 // describe('Categories test', () => {
-//     it('should render correctly', () => {
-//         const rendered = render(<SmokeText children={'lol'}/>);
+//     const getElementByXpath = (path) =>
+//         document.evaluate(path, document,
+//             null, XPathResult.FIRST_ORDERED_NODE_TYPE,
+//             null).singleNodeValue;
 //
-//         expect(rendered.asFragment()).toMatchSnapshot();
+//     const obj = {
+//         children: 'lol',
+//     };
+//
+//     it('should render correctly', () => {
+//         const rendered = render(<SmokeText children={obj}/>);
+//         assert.ok(rendered.getByText(/18\+/));
+//         // assert(rendered.getByText(/18\+/), -1);
 //     });
 //
 //     it('should render correctly', () => {
-//         const rendered = render(<SmokeText children={'lol'}/>);
-//
-//         expect(rendered.asFragment()).toMatchSnapshot();
+//         const rendered = render(<SmokeText children={obj}/>);
+//         assert.ok(rendered.getByText(/м.*о.*с.*к.*в.*а/i));
 //     });
 //
-//     it('should render correctly', () => {
-//         const rendered = render(<SmokeText children={'lol'}/>);
-//
-//         expect(rendered.asFragment()).toMatchSnapshot();
-//     });
-//
-//     it('should render correctly', () => {
-//         const rendered = render(<SmokeText children={'lol'}/>);
-//
-//         expect(rendered.asFragment()).toMatchSnapshot();
-//     });
-//
-//     it('should render correctly', () => {
-//         const rendered = render(<SmokeText children={'lol'}/>);
-//
-//         expect(rendered.asFragment()).toMatchSnapshot();
-//     });
-//
-//     it('should render correctly', () => {
-//         const rendered = render(<SmokeText children={'lol'}/>);
-//
-//         expect(rendered.asFragment()).toMatchSnapshot();
-//     });
+//     // it('should render correctly', () => {
+//     //     const rendered = render(<SmokeText children={obj}/>);
+//     //     // rendered.getAllBy();
+//     //     assert.ok(getElementByXpath());
+//     // });
+//     //
+//     // it('should render correctly', () => {
+//     //     const rendered = render(<SmokeText children={obj}/>);
+//     //     assert.ok(rendered.getByText(/м.*о.*с.*к.*в.*а/i));
+//     // });
+//     //
+//     // it('should render correctly', () => {
+//     //     const rendered = render(<SmokeText children={obj}/>);
+//     //     assert.ok(rendered.getByText(/м.*о.*с.*к.*в.*а/i));
+//     // });
 // });

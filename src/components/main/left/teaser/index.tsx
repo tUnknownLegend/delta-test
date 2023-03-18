@@ -14,21 +14,23 @@ export default ({item, index, transform}) => {
         warning,
     } = item;
 
-    let image_src;
-    let image_width;
-    let image_height;
+    let imageSrc;
+    let imageWidth;
+    let imageHeight;
 
     if (images[0]) {
-        [image_src, image_width, image_height] = images[0];
+        [imageSrc, imageWidth, imageHeight] = images[0];
     }
 
     const classes = [
         transform('teaser'),
     ];
 
-    if (image_src) {
+    if (imageSrc) {
         classes.push(transform('teaser_image'));
     }
+
+    const textClasses = [transform('text-content'), transform('text-content_hidden')];
 
     return (
         <Block className={classes.join(' ')}>
@@ -37,13 +39,13 @@ export default ({item, index, transform}) => {
                 {title}
             </Block>
 
-            {image_src && (
+            {imageSrc && (
                 <Block className={transform('picture')}>
                     <Image
                         className={transform(`picture__image_${index}`)}
-                        src={image_src}
-                        width={image_width}
-                        height={image_height}
+                        src={imageSrc}
+                        width={imageWidth}
+                        height={imageHeight}
                     />
                 </Block>
             )}
@@ -54,19 +56,28 @@ export default ({item, index, transform}) => {
 
             {warning && (
                 <Block className={transform('warning')}>
-                    <SmokeText>{warning}</SmokeText>
+                    <SmokeText>
+                        {warning}
+                        {textClasses}
+                    </SmokeText>
                 </Block>
             )}
 
             <Block className={transform('contacts')}>
 
                 <Block className={transform('contacts__item contacts__item_link')}>
-                    <SmokeText>{domain}</SmokeText>
+                    <SmokeText>
+                        {domain}
+                        {textClasses}
+                    </SmokeText>
                 </Block>
 
                 {region && (
                     <Block className={transform('contacts__item')}>
-                        <SmokeText>{region}</SmokeText>
+                        <SmokeText>
+                            {region}
+                            {textClasses}
+                        </SmokeText>
                     </Block>
                 )}
             </Block>
