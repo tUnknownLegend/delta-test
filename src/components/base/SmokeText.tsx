@@ -8,10 +8,10 @@ export default ({children}) => {
             {text.slice(prevState, prevState + currState)}</div>) :
         text.slice(prevState, prevState + currState));
 
-    const getHiddenDiv = (text, hiddenClass, strBegin) => (
-        <div key={hiddenClass + strBegin} className={hiddenClass}>{
-            '\n'+(Math.random() + 1).
-                toString(36).substring(genRandomNumber(4)).replace(text, '')+'\n'}</div>);
+    const getHiddenDiv = (text, hiddenClass, strBegin, step) => (
+        <div key={hiddenClass + strBegin} className={hiddenClass}>
+            {'\n'+(text.slice(strBegin, strBegin + step))+'\n'}
+        </div>);
 
     const [text, [visibleClass, hiddenClass]] = children;
     const getSpploittedText = () => {
@@ -24,7 +24,8 @@ export default ({children}) => {
             prevState += currState;
             currState = genRandomNumber(maxStep);
             splittedText.push(getPartOfStr(prevState, currState, text, visibleClass));
-            splittedText.push(getHiddenDiv(text, hiddenClass, prevState));
+            splittedText.push(getHiddenDiv(text, hiddenClass, prevState,
+                prevState + genRandomNumber(maxStep)));
         }
         splittedText.push(
             getPartOfStr(prevState + currState, text.length - currState, text, visibleClass));

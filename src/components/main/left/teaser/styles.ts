@@ -31,7 +31,10 @@ export default (locator) => {
         },
 
         '.mimic_left .teaser .text-content_hidden': {
-            'display': 'none',
+            'display': 'inline-block',
+            'width': '0',
+            'height': '0',
+            'overflow': 'hidden',
         },
 
         '.mimic_left .teaser .content':

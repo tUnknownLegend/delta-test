@@ -8,7 +8,8 @@
     "start": "start-storybook",
     "lint": "npx eslint . --ext .ts",
     "lint:fix": "npx eslint . --ext .ts --fix",
-    "test": "mocha --require global-jsdom/register -r ts-node/register 'src/components/base/*'"
+    "test": "mocha --require global-jsdom/register -r ts-node/register 'src/components/base/*'",
+    "cypress": "npx cypress open"
   },
   "dependencies": {
     "react": "16.8.6",

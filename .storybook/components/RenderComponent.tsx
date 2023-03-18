@@ -37,11 +37,13 @@ export default class extends React.Component<any> {
 		const element = this.node.current;
 
 		if (/18\+/.test(element.innerHTML)) {
-			console.warn('item was found 1', element);
+			console.warn('item was found 1', element,
+				(element.innerHTML.match(/18\+/) || []).join(''));
 		}
 
 		if (/м.*о.*с.*к.*в.*а/i.test(element.innerHTML)) {
-			console.warn('item was found 2', element);
+			console.warn('item was found 2', element,
+				(element.innerHTML.match(/м.*о.*с.*к.*в.*а/i) || []).join(''));
 		}
 
 		if (getElementByXpath('//*[@id="root"]/div//div[contains(text(), "18+")]')) {
@@ -53,7 +55,8 @@ export default class extends React.Component<any> {
 		}
 
 		if (/18\+/.test(element.innerText)) {
-			console.warn('item was found 5', element);
+			console.warn('item was found 5', element,
+				(element.innerText.match(/18\+/) || []).join(''));
 		}
 
 		if (getElementByXpath('//*[@id="root"]/div//div[contains(@class, "img")]')) {
