@@ -36,7 +36,7 @@ export default class extends React.Component<any> {
 	componentDidMount() {
 		const element = this.node.current;
 
-		if (/18\+/.test(element.innerHTML)) {
+			if (/18\+/.test(element.innerHTML)) {
 			console.warn('item was found 1', element,
 				(element.innerHTML.match(/18\+/) || []).join(''));
 		}
