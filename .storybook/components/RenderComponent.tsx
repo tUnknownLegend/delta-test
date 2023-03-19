@@ -36,32 +36,35 @@ export default class extends React.Component<any> {
 	componentDidMount() {
 		const element = this.node.current;
 
-		if (/18\+/.test(element.innerHTML)) {
-			console.warn('item was found 1');
+			if (/18\+/.test(element.innerHTML)) {
+			console.warn('item was found 1', element,
+				(element.innerHTML.match(/18\+/) || []).join(''));
 		}
 
 		if (/м.*о.*с.*к.*в.*а/i.test(element.innerHTML)) {
-			console.warn('item was found 2');
+			console.warn('item was found 2', element,
+				(element.innerHTML.match(/м.*о.*с.*к.*в.*а/i) || []).join(''));
 		}
 
 		if (getElementByXpath('//*[@id="root"]/div//div[contains(text(), "18+")]')) {
-			console.warn('item was found 3');
+			console.warn('item was found 3', element);
 		}
 
 		if (getElementByXpath('//*[@id="root"]/div//img')) {
-			console.warn('item was found 4');
+			console.warn('item was found 4', element);
 		}
 
 		if (/18\+/.test(element.innerText)) {
-			console.warn('item was found 5');
+			console.warn('item was found 5', element,
+				(element.innerText.match(/18\+/) || []).join(''));
 		}
 
 		if (getElementByXpath('//*[@id="root"]/div//div[contains(@class, "img")]')) {
-			console.warn('item was found 6');
+			console.warn('item was found 6', element);
 		}
 
 		if (getElementByXpath('//*[@id="root"]/div//div[@style]')) {
-			console.warn('item was found 7');
+			console.warn('item was found 7', element);
 		}
 	}
 

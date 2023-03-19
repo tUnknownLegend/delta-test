@@ -2,10 +2,14 @@
   "name": "trainee-test-1",
   "version": "1.1.1",
   "engines": {
-    "node": ">=10.4.0"
+    "node": ">=10.4.0 <17.0.0"
   },
   "scripts": {
-    "start": "start-storybook"
+    "start": "start-storybook",
+    "lint": "npx eslint . --ext .ts",
+    "lint:fix": "npx eslint . --ext .ts --fix",
+    "test": "mocha --require global-jsdom/register -r ts-node/register 'src/components/base/*'",
+    "coverage": "nyc npm run test"
   },
   "dependencies": {
     "react": "16.8.6",
@@ -13,12 +17,25 @@
   },
   "devDependencies": {
     "@storybook/react": "5.1.9",
+    "@testing-library/react": "^9.5.0",
+    "@types/mocha": "^10.0.1",
     "@types/node": "15.14.9",
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
     "@types/storybook__react": "4.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
     "awesome-typescript-loader": "5.2.1",
     "core-js": "3.1.4",
+    "eslint": "^8.29.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-jsdoc": "^39.6.4",
+    "eslint-plugin-tsdoc": "^0.2.17",
+    "global-jsdom": "^8.7.0",
+    "mocha": "^10.2.0",
+    "node": "^16.13.0",
+    "nyc": "^15.1.0",
+    "ts-mocha": "^10.0.0",
     "typescript": "3.5.3",
     "webpack": "4.35.3"
   }
