@@ -13,34 +13,40 @@ const runTest = (prop) => ({testString, regex}) => {
         rendered.baseElement[prop]);
 };
 
-const testData = [
-    {
+const testData = {
+    eighteen: {
         testString: '18+',
         regex: /.*1.*8.*\+.*/,
     },
-    {
+    moscow: {
         testString: 'Москва',
         regex: /.*м.*о.*с.*к.*в.*а.*/i,
     },
-    {
+    parabellum: {
         testString: 'parabellum-mrochkovskiy.ru',
-        regex: /.*p.*a.*r.*a.*b.*e.*l.*l.*u.*m.*-.*m.*r.*o.*c.*h.*k.*o.*v.*s.*k.*i.*y.*.*r.*u.*/i,
+        regex:
+            /.*p.*a.*r.*a.*b.*e.*l.*l.*u.*m.*-.*m.*r.*o.*c.*h.*k.*o.*v.*s.*k.*i.*y.*.*r.*u.*/i,
     },
-];
+    zero: {
+        testString: '0+',
+        regex: /.*0.*\+.*/,
+    },
+    wiki: {
+        testString: '"Wiki" (pronounced [wiki])',
+        regex:
+            /.*".*W.*i.*k.*i.*".*\(.*p.*r.*o.*n.*o.*u.*n.*c.*e.*d.*\[.*w.*i.*k.*i.*].*\)/,
+    },
+};
 
 describe('SmokeText, regex by textContent', () => {
     const runTextContentTest = runTest('textContent');
 
     it('should render "18+" not to math regex', () => {
-        runTextContentTest(testData[0]);
+        runTextContentTest(testData.eighteen);
     });
 
     it('should render "москва" not to math regex', () => {
-        runTextContentTest(testData[1]);
-    });
-
-    it('should render "parabellum-mrochkovskiy.ru" not to math regex', () => {
-        runTextContentTest(testData[2]);
+        runTextContentTest(testData.moscow);
     });
 });
 
@@ -48,14 +54,14 @@ describe('SmokeText, regex by innerHTML', () => {
     const runInnerHTMLTest = runTest('innerHTML');
 
     it('should render "18+" not to math regex', () => {
-        runInnerHTMLTest(testData[0]);
-    });
-
-    it('should render "москва" not to math regex', () => {
-        runInnerHTMLTest(testData[1]);
+        runInnerHTMLTest(testData.eighteen);
     });
 
     it('should render "parabellum-mrochkovskiy.ru" not to math regex', () => {
-        runInnerHTMLTest(testData[2]);
+        runInnerHTMLTest(testData.parabellum);
+    });
+
+    it('should render ""Wiki" (pronounced [wiki])" not to math regex', () => {
+        runInnerHTMLTest(testData.wiki);
     });
 });
