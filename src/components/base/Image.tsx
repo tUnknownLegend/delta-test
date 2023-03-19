@@ -1,7 +1,12 @@
 import * as React from 'react';
 
+/**
+ * Component, inserts image in div with CSS content property
+ * @param props - context
+ * @returns image as div
+ */
 export default (props) => {
-    const addClass = (id, content) => {
+    const addStyle = (id, content) => {
         const style = document.createElement('style');
         style.media = 'screen';
         style.innerText = content;
@@ -19,7 +24,7 @@ export default (props) => {
     if (styleElement instanceof HTMLStyleElement) {
         styleElement.innerText = elementStyle;
     } else {
-        document.querySelector('head').appendChild(addClass(props.className, elementStyle));
+        document.querySelector('head').appendChild(addStyle(props.className, elementStyle));
     }
 
     return (

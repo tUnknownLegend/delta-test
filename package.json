@@ -9,7 +9,7 @@
     "lint": "npx eslint . --ext .ts",
     "lint:fix": "npx eslint . --ext .ts --fix",
     "test": "mocha --require global-jsdom/register -r ts-node/register 'src/components/base/*'",
-    "cypress": "npx cypress open"
+    "coverage": "nyc npm run test"
   },
   "dependencies": {
     "react": "16.8.6",
@@ -34,6 +34,7 @@
     "global-jsdom": "^8.7.0",
     "mocha": "^10.2.0",
     "node": "^16.13.0",
+    "nyc": "^15.1.0",
     "ts-mocha": "^10.0.0",
     "typescript": "3.5.3",
     "webpack": "4.35.3"

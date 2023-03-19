@@ -21,10 +21,6 @@ export default (locator) => {
             'margin-bottom': locator.calcString(6, 'px'),
         },
 
-        '.mimic_left .teaser .picture .picture__image': {
-
-        },
-
         '.mimic_left .teaser .text-content': {
             'display': 'inline',
             'overflow': 'hidden',

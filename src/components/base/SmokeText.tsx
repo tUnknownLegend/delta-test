@@ -1,5 +1,10 @@
 import * as React from 'react';
 
+/**
+ * Component, masks string against getting with regex and XPath queries
+ * @param children - context
+ * @returns string, wrapped in divs
+ */
 export default ({children}) => {
     const genRandomNumber = (len) => Math.ceil(Math.random() * len);
     const rand = () => Math.random() > 0.5;
@@ -10,11 +15,11 @@ export default ({children}) => {
 
     const getHiddenDiv = (text, hiddenClass, strBegin, step) => (
         <div key={hiddenClass + strBegin} className={hiddenClass}>
-            {'\n'+(text.slice(strBegin, strBegin + step))+'\n'}
+            {'\n' + (text.slice(strBegin, strBegin + step)) + '\n'}
         </div>);
 
     const [text, [visibleClass, hiddenClass]] = children;
-    const getSpploittedText = () => {
+    const getSplittedText = () => {
         const maxStep = (text.length <= 4 ? 2 : 4);
         const splittedText = [];
         let prevState = 0;
@@ -34,6 +39,6 @@ export default ({children}) => {
     };
 
     return (<div className={visibleClass}>
-        {getSpploittedText()}
+        {getSplittedText()}
     </div>);
 };
